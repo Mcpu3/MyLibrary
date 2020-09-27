@@ -13,7 +13,7 @@ protected:
 	vector<vector<T>> _d;
 
 protected:
-	void to_adj() {
+	void to_d() {
 		for (int _i = 0; _i < static_cast<int>(_adj.size()); _i++) {
 			_d[_i][_i] = 0;
 			for (const pair<int, T>& _j : _adj[_i]) _d[_i][_j.first] = _j.second;
@@ -25,7 +25,7 @@ public:
 		_adj(adj),
 		_d(adj.size(), vector<T>(adj.size(), numeric_limits<T>::max()))
 	{
-		to_adj();
+		to_d();
 		for (int _k = 0; _k < static_cast<T>(_d.size()); _k++) {
 			for (int _i = 0; _i < static_cast<T>(_d.size()); _i++) {
 				if (_d[_i][_k] == numeric_limits<T>::max()) continue;
