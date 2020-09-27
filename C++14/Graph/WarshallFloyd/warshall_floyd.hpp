@@ -15,7 +15,7 @@ protected:
 protected:
 	void to_adj() {
 		for (int _i = 0; _i < static_cast<int>(_adj.size()); _i++) {
-			_d[_i][_i] = static_cast<T>(0);
+			_d[_i][_i] = 0;
 			for (const pair<int, T>& _j : _adj[_i]) _d[_i][_j.first] = _j.second;
 		}
 	}

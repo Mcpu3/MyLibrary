@@ -21,8 +21,8 @@ public:
 		_d(adj.size(), numeric_limits<T>::max())
 	{
 		priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> _pq;
-		_d[s] = static_cast<T>(0);
-		_pq.emplace(static_cast<T>(0), s);
+		_d[s] = 0;
+		_pq.emplace(0, s);
 		while (!_pq.empty()) {
 			const pair<T, int> _f = _pq.top();
 			_pq.pop();
