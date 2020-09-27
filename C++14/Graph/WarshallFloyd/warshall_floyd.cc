@@ -13,25 +13,25 @@ protected:
 	vector<vector<T>> _d;
 
 protected:
-	inline void to_adj() {
-		for (int i = 0; i < static_cast<int>(_adj.size()); i++) {
-			_d[i][i] = static_cast<T>(0);
-			for (const pair<int, T>& j : _adj[i]) _d[i][j.first] = j.second;
+	void to_adj() {
+		for (int _i = 0; _i < static_cast<int>(_adj.size()); _i++) {
+			_d[_i][_i] = static_cast<T>(0);
+			for (const pair<int, T>& _j : _adj[_i]) _d[_i][_j.first] = _j.second;
 		}
 	}
 
 public:
-	WarshallFloyd(const vector<vector<pair<int, T>>>& m) :
-		_adj(m),
-		_d(m.size(), vector<T>(m.size(), numeric_limits<T>::max()))
+	WarshallFloyd(const vector<vector<pair<int, T>>>& adj) :
+		_adj(adj),
+		_d(adj.size(), vector<T>(adj.size(), numeric_limits<T>::max()))
 	{
 		to_adj();
-		for (int k = 0; k < static_cast<T>(_d.size()); k++) {
-			for (int i = 0; i < static_cast<T>(_d.size()); i++) {
-				if (_d[i][k] == numeric_limits<T>::max()) continue;
-				for (int j = 0; j < static_cast<T>(_d.size()); j++) {
-					if (_d[k][j] == numeric_limits<T>::max()) continue;
-					_d[i][j] = min(_d[i][j], _d[i][k] + _d[k][j]);
+		for (int _k = 0; _k < static_cast<T>(_d.size()); _k++) {
+			for (int _i = 0; _i < static_cast<T>(_d.size()); _i++) {
+				if (_d[_i][_k] == numeric_limits<T>::max()) continue;
+				for (int _j = 0; _j < static_cast<T>(_d.size()); _j++) {
+					if (_d[_k][_j] == numeric_limits<T>::max()) continue;
+					_d[_i][_j] = min(_d[_i][_j], _d[_i][_k] + _d[_k][_j]);
 				}
 			}
 		}
@@ -39,15 +39,14 @@ public:
 
 public:
 	bool has_negative_cycle() {
-		bool has_negative_cycle = false;
-
-		for (int i = 0; i < static_cast<int>(_d.size()); i++) {
-			if (_d[i][i] < 0) {
-				has_negative_cycle = true;
+		bool _has_negative_cycle = false;
+		for (int _i = 0; _i < static_cast<int>(_d.size()); _i++) {
+			if (_d[_i][_i] < 0) {
+				_has_negative_cycle = true;
 				break;
 			}
 		}
-		return has_negative_cycle;
+		return _has_negative_cycle;
 	}
 
 public:

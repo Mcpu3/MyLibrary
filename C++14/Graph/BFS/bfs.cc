@@ -10,12 +10,11 @@ protected:
 	vector<int> _d;
 
 public:
-	BFS(const vector<vector<int>>& a, const int& s) :
-		_adj(a),
-		_d(a.size(), -1)
+	BFS(const vector<vector<int>>& adj, const int& s) :
+		_adj(adj),
+		_d(adj.size(), -1)
 	{
 		queue<int> _q;
-
 		_d[s] = 0;
 		_q.push(s);
 		while (!_q.empty()) {

@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
 	vector<int> a{ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
-
 	cout << BinarySearch::binary_search(a, 0) << endl;
 	cout << BinarySearch::binary_search(a, 11) << endl;
 	cout << BinarySearch::binary_search(a, 12) << endl;

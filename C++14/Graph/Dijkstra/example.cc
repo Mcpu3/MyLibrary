@@ -10,7 +10,6 @@ int main() {
 		{ { 1, 13 } }
 	};
 	vector<Dijkstra<int>> dijkstra{ { a, 0 }, { a, 1 }, { a, 2 }, { a, 3 } };
-
 	cout << dijkstra[0][0] << endl;
 	cout << dijkstra[1][2] << endl;
 	cout << dijkstra[2][1] << endl;

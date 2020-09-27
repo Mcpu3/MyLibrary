@@ -10,7 +10,6 @@ int main() {
 		{ { 1, 13 } }
 	};
 	WarshallFloyd<int> warshall_floyd(a);
-
 	cout << warshall_floyd(0, 0) << endl;
 	cout << warshall_floyd(1, 2) << endl;
 	cout << warshall_floyd(2, 1) << endl;
