@@ -10,13 +10,13 @@ using namespace std;
 template <typename T>
 class Dijkstra {
 protected:
-	const vector<vector<pair<int, T>>>& _a;
+	const vector<vector<pair<int, T>>>& _adj;
 	vector<bool> _c;
 	vector<T> _d;
 
 public:
 	Dijkstra(const vector<vector<pair<int, T>>>& a, const int& s) :
-		_a(a),
+		_adj(a),
 		_c(a.size()),
 		_d(a.size(), numeric_limits<T>::max())
 	{
@@ -29,11 +29,11 @@ public:
 
 			_pq.pop();
 			_c[_f.second] = true;
-			for (int i = 0; i < static_cast<int>(_a[_f.second].size()); i++) {
-				if (_c[_a[_f.second][i].first]) continue;
-				if (_a[_f.second][i].second + _d[_f.second] < _d[_a[_f.second][i].first]) {
-					_d[_a[_f.second][i].first] = _a[_f.second][i].second + _d[_f.second];
-					_pq.emplace(_d[_a[_f.second][i].first], _a[_f.second][i].first);
+			for (int i = 0; i < static_cast<int>(_adj[_f.second].size()); i++) {
+				if (_c[_adj[_f.second][i].first]) continue;
+				if (_d[_adj[_f.second][i].first] > _d[_f.second] + _adj[_f.second][i].second) {
+					_d[_adj[_f.second][i].first] = _d[_f.second] + _adj[_f.second][i].second;
+					_pq.emplace(_d[_adj[_f.second][i].first], _adj[_f.second][i].first);
 				}
 			}
 		}

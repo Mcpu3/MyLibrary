@@ -6,12 +6,12 @@ using namespace std;
 
 class BFS {
 protected:
-	const vector<vector<int>>& _a;
+	const vector<vector<int>>& _adj;
 	vector<int> _d;
 
 public:
 	BFS(const vector<vector<int>>& a, const int& s) :
-		_a(a),
+		_adj(a),
 		_d(a.size(), -1)
 	{
 		queue<int> _q;
@@ -19,7 +19,7 @@ public:
 		_d[s] = 0;
 		_q.push(s);
 		while (!_q.empty()) {
-			for (const int& _i : _a[_q.front()]) {
+			for (const int& _i : _adj[_q.front()]) {
 				if (_d[_i] != -1) continue;
 				_d[_i] = _d[_q.front()] + 1;
 				_q.push(_i);
