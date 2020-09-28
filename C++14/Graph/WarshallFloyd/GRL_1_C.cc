@@ -21,11 +21,15 @@ int main() {
 	}
 	for (int i = 0; i < V; i++) {
 		for (int j = 0; j < V - 1; j++) {
-			if (warshall_floyd(i, j) != INT_MAX) cout << warshall_floyd(i, j);
+			if (warshall_floyd(i, j) != INT_MAX) {
+				cout << warshall_floyd(i, j);
+			}
 			else cout << "INF";
 			cout << ' ';
 		}
-		if (warshall_floyd(i, V - 1) != INT_MAX) cout << warshall_floyd(i, V - 1);
+		if (warshall_floyd(i, V - 1) != INT_MAX) {
+			cout << warshall_floyd(i, V - 1);
+		}
 		else cout << "INF";
 		cout << endl;
 	}

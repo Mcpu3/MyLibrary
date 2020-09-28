@@ -16,7 +16,9 @@ protected:
 	void to_d() {
 		for (int _i = 0; _i < static_cast<int>(_adj.size()); _i++) {
 			_d[_i][_i] = 0;
-			for (const pair<int, T>& _j : _adj[_i]) _d[_i][_j.first] = _j.second;
+			for (const pair<int, T>& _j : _adj[_i]) {
+				_d[_i][_j.first] = _j.second;
+			}
 		}
 	}
 

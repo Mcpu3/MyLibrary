@@ -15,8 +15,8 @@ public:
 		_d(adj.size(), -1)
 	{
 		queue<int> _q;
-		_d[s] = 0;
 		_q.push(s);
+		_d[s] = 0;
 		while (!_q.empty()) {
 			for (const int& _i : _adj[_q.front()]) {
 				if (_d[_i] != -1) continue;
