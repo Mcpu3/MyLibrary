@@ -26,8 +26,8 @@ int main() {
 	for (int& i : T) cin >> i;
 	int ans = 0;
 	for (const int& i : T) {
-		ans += BinarySearch::binary_search(S, i, is_ok_l)
-			!= BinarySearch::binary_search(S, i, is_ok_u);
+		ans += BinarySearch<int>::binary_search(S, i, is_ok_l)
+			!= BinarySearch<int>::binary_search(S, i, is_ok_u);
 	}
 	cout << ans << endl;
 }

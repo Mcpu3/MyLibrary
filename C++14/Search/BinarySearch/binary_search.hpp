@@ -3,9 +3,9 @@
 #include <vector>
 using namespace std;
 
+template <typename T>
 class BinarySearch {
 public:
-	template <typename T>
 	static int binary_search(const vector<T>& a, const T& key,
 		bool (*is_ok)(const vector<T>& a, const T& key, const int& mid)) {
 		int _ng = -1, _ok = a.size();
