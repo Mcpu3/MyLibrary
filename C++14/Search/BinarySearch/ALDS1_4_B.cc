@@ -25,9 +25,6 @@ int main() {
 	vector<int> T(q);
 	for (int& i : T) cin >> i;
 	int ans = 0;
-	for (const int& i : T) {
-		ans += BinarySearch<int>::binary_search(S, i, is_ok_l)
-			!= BinarySearch<int>::binary_search(S, i, is_ok_u);
-	}
+	for (const int& i : T) ans += BinarySearch<int>::binary_search(S, i, is_ok_l) != BinarySearch<int>::binary_search(S, i, is_ok_u);
 	cout << ans << endl;
 }
