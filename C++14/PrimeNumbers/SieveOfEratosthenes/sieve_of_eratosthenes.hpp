@@ -11,9 +11,9 @@ public:
 	SieveOfEratosthenes(const int& n) : _is_prime(n + 1, true) {
 		_is_prime[0] = false;
 		_is_prime[1] = false;
-		for (int i = 2; i * i <= n; i++) {
-			if (!_is_prime[i]) continue;
-			for (int j = i * i; j <= n; j += i) _is_prime[j] = false;
+		for (int _i = 2; _i * _i <= n; _i++) {
+			if (!_is_prime[_i]) continue;
+			for (int _j = _i * _i; _j <= n; _j += _i) _is_prime[_j] = false;
 		}
 	}
 
