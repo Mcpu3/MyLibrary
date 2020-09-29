@@ -9,7 +9,7 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		int a;
 		cin >> a;
-		if (TrialDivision<int>::is_prime(a)) ans++;
+		ans += TrialDivision<int>::is_prime(a);
 	}
 	cout << ans << endl;
 }
