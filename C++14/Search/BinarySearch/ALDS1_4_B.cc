@@ -4,13 +4,11 @@
 #include "binary_search.hpp"
 using namespace std;
 
-template<typename T>
-bool is_ok_l(const vector<T>& a, const T& key, const int& mid) {
+bool is_ok_l(const vector<int>& a, const int& key, const int& mid) {
 	return a[mid] >= key;
 }
 
-template <typename T>
-bool is_ok_u(const vector<T>& a, const T& key, const int& mid) {
+bool is_ok_u(const vector<int>& a, const int& key, const int& mid) {
 	return a[mid] > key;
 }
 
